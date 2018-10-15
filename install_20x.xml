@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:PersonalWordCensor</id>
+<name>Personal Word Censor</name>
+<version>1.0.4</version>
+
+<file name="$themedir/Display.template.php">
+	<operation>
+		<search position="after"><![CDATA[		// Show information about the poster of this message.]]></search>
+		<add><![CDATA[$whole_post = (strpos($message['body'], '<tabPost />') !== false);
+if (!$whole_post)
+{
+]]></add>
+	</operation>
+	<operation>
+		<search position="after"><![CDATA[<div class="postarea]]></search>
+		<add><![CDATA[';
+}
+		echo '
+						]]></add>
+	</operation>
+	<operation>
+		<search position="before"><![CDATA[<div class="postarea]]></search>
+		<add><![CDATA[' . ($whole_post? ' tabPost' : '') . ']]></add>
+	</operation>
+	<operation>
+		<search position="before"><![CDATA[<div class="moderatorbar]]></search>
+		<add><![CDATA[' . ($whole_post !== false ? ' tabPost' : '') . ']]></add>
+	</operation>
+</file>
+</modification>

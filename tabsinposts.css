@@ -1,0 +1,74 @@
+.tabPost {
+	margin: 0 1em 0 1.5em;
+}
+
+.tabContainer {
+	width: 99%;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.tabContainer > .tabs{
+	height:24px;
+}
+
+.tabContainer > .tabs > ul{
+	font-size: 1em;
+	list-style:none;
+	margin-left: -40px;
+}
+
+.tabContainer > .tabs > ul > li{
+	margin:0 2px 0 0;
+	padding:7px 10px;
+	display:block;
+	float:left;
+	color:#000000;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius:4px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px; 
+	background: #BBBBBB; /* old browsers */
+	background: -moz-linear-gradient(top, #BBBBBB 0%, #B2B2B2 10%, #B2B2B2 50%, #BBBBBB 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BBBBBB), color-stop(10%,#B2B2B2), color-stop(50%,#B2B2B2), color-stop(100%,#BBBBBB)); /* webkit */
+}
+
+.tabContainer > .tabs > ul > li:hover{
+	cursor:pointer;
+	color: #333;
+	background: #C9C9C9; /* old browsers */
+	background: -moz-linear-gradient(top, #0C91EC 0%, #257AB6 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0C91EC), color-stop(100%,#257AB6)); /* webkit */
+}
+
+.tabContainer > .tabs > ul > li.tabActiveHeader{
+	background: #C9C9C9; /* old browsers */
+	background: -moz-linear-gradient(top, #0C91EC 0%, #257AB6 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0C91EC), color-stop(100%,#257AB6)); /* webkit */
+	cursor:pointer;
+	color: #333;
+}
+
+.tabContainer > .content {
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px; 
+	padding:10px 10px 0px;
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #FFFFFF 90%, #e4e9ed 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(90%,#FFFFFF), color-stop(100%,#e4e9ed)); /* webkit */
+	margin:0;
+	color:#333;
+	border: #FFFFFF;
+}
