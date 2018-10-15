@@ -1,3 +1,11 @@
+v1.2 - October 14th, 2018
+o Added the ability to parse the title, allowing for bbcode in the title.
+o Added [b]tab[/b] URL parameter to specify default tab in post (inspired by GitHub).
+o Added [b]tab_[i]x[/i][/b] URL parameter to specify default tab in a specific tabbed area.
+o Fixed [b]taburl[/b] tag to properly show title instead of URL.
+o Fixed unwanted extra line issue with [b][nobbc][wholepost][/nobbc][/b] tag.
+o Updated documentation to point to new website.
+
 v1.1 - June 3rd, 2018
 o Added support for [b]SMF 2.1 Beta 3[/b].
 o Fixed a couple of undefined indexes in [b]Sources/Subs.php[/b].

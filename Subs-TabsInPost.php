@@ -27,6 +27,7 @@ function TIP_BBcode(&$codes)
 		'tag' => 'wholepost',
 		'type' => 'closed',
 		'content' => '<tabPost />',
+		'trim' => 'both',
 	);
 
 	// BBCode format: [tabarea]unparsed content[/tabarea]
@@ -64,10 +65,12 @@ function TIP_Header(&$tag, &$link, &$disabled)
 	global $context, $forum_version;
 	static $tag_group = 0;
 	
+	// Determine a few variables:
 	$smf21 = substr($forum_version, 0, 7) == 'SMF 2.1';
+	$tab = (int) (!empty($_REQUEST['tab_' . $tag_group]) ? $_REQUEST['tab_' . $tag_group] : (!empty($_REQUEST['tab']) ? $_REQUEST['tab'] : 0));
 
 	// Make sure we have at least one tab inside the tab area.  If not, don't parse anything!
-	$pattern = '#\[(taburl|tab)=([^\]]+)\](.+?)\[/(tab|taburl)\]#i' . ($context['utf8'] ? 'u' : '');
+	$pattern = '#\[(taburl|tab)=([^\]]+)\](.+?)\[/(taburl|tab)\]#i' . ($context['utf8'] ? 'u' : '');
 	if (!preg_match_all($pattern, $link, $codes, PREG_PATTERN_ORDER))
 		return;
 
@@ -78,19 +81,19 @@ function TIP_Header(&$tag, &$link, &$disabled)
 	{
 		if ($usage == 'taburl')
 		{
-			$link = &$codes[3][$tab_id];
+			$link = &$codes[2][$tab_id];
 			$link = strtr($link, array('<br />' => ''));
 			if (strpos($link, 'http://') !== 0 && strpos($link, 'https://') !== 0)
 				$link = 'http://' . $link;
-			$codes[2][$tab_id] = '<a href="'. $link . '">' . $codes[2][$tab_id] . '</a>';
+			$codes[2][$tab_id] = '<a href="'. $link . '">' . $codes[3][$tab_id] . '</a>';
 			unset($codes[3][$tab_id]);
 		}
 	}
 	foreach ($codes[2] as $tab_id => $title)
-		$tag['content'] .= '<li id="tabHeader' . $tag_group . '_' . $tab_id . '"' . (!$tab_id ? ' class="tabActiveHeader"' : '') . (isset($codes[3][$tab_id]) ? ' onClick="displayPage(' . $tag_group . ', this);"' : '') . '>' . $title . '</a></li>';
+		$tag['content'] .= '<li id="tabHeader' . $tag_group . '_' . $tab_id . '"' . ($tab_id == $tab ? ' class="tabActiveHeader"' : '') . (isset($codes[3][$tab_id]) ? ' onClick="displayPage(' . $tag_group . ', this);"' : '') . '>' . parse_bbc($title) . '</a></li>';
 	$tag['content'] .= '</ul></div><hr class="clear" /><div id="content">';
 	foreach ($codes[3] as $tab_id => $text)
-		$tag['content'] .= '<div id="tabpage' . $tag_group . '_' . $tab_id . '"' . ($tab_id ? ' style="display: none"' : '') . '>' . parse_bbc($text) . '</div>';
+		$tag['content'] .= '<div id="tabpage' . $tag_group . '_' . $tab_id . '"' . ($tab_id != $tab ? ' style="display: none"' : '') . '>' . parse_bbc($text) . '</div>';
 	$tag['content'] .= '</div></div>';
 	$tag_group++;
 }

@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]TABS IN POSTS v1.1[/b][/size][/color]
+[center][color=red][size=16pt][b]TABS IN POSTS v1.2[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=https://custom.simplemachines.org/mods/index.php?mod=4182]Link to Mod[/url]
 [/center]
 [hr]
@@ -9,15 +9,17 @@ Ever had too much information and wished you could put it in tabs to organize it
 [code=Example][tabarea]
 [tab=Tab 1]This is a test![/tab]
 [tab=Tab 2]This is a test as well![/tab]
-[taburl=Tab 3]http://www.xptsp.com[/taburl]
+[taburl=URL]http://www.xptsp.com[/taburl]
 [/tabarea][/code]
 Note that anything between [b][nobbc][tabarea][/nobbc][/b] and [b][nobbc][tab][/nobbc][/b], between closing and opening [b][nobbc][tab][/nobbc][/b] tags, and between the last [b][nobbc][tab][/nobbc][/b] and the closing [b][nobbc][tabarea][/nobbc][/b] tag is discarded.  The example below:
 [code=Excluded Example][tabarea]Excluded # 1
 [tab=Tab 1]This is a test![/tab]Excluded # 2
 [tab=Tab 2]This is a test as well![/tab]Excluded # 3
-[taburl=Tab 3]http://www.xptsp.com[/taburl]
+[taburl=URL]http://www.xptsp.com[/taburl]
 [/tabarea][/code]
 is the same as the first code block shown.  You can also use the [b][nobbc][taburl][/nobbc][/b] bbcode to go to a different page/site by clicking that link.
+
+Version 1.2 allows the user to use some smileys in the title, however, anything with brackets should be avoided.  BBcodes in general cannot be used as any part of the title, but this may be change in later versions....
 
 Using the new [b][nobbc][wholepost[/nobbc][/b] bbcode changes the format of the post so that the poster information is omitted from the message display.
 
@@ -30,10 +32,10 @@ There are no admin settings for this mod.  To disable the bbcode, you may go to 
 This mod was tested on SMF 2.0.15 and SMF 2.1 Beta 3, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.
 
 [color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
-The changelog has been removed and can be seen at [url=http://www.xptsp.com/board/index.php?topic=1647.msg2389#msg2389]XPtsp.com[/url].
+The changelog can be viewed at [url=http://www.xptsp.com/board/free-modifications/tabs-in-post/]XPtsp.com[/url].
 
 [color=blue][b][size=12pt][u]License[/u][/size][/b][/color]
-[quote]Copyright (c) 2018, Douglas Orend
+Copyright (c) 2018, Douglas Orend
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -43,4 +45,3 @@ Redistribution and use in source and binary forms, with or without modification,
 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-[/quote]
