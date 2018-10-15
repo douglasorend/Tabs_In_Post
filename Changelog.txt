@@ -1,2 +1,6 @@
+v1.1 - June 3rd, 2018
+o Added support for [b]SMF 2.1 Beta 3[/b].
+o Fixed a couple of undefined indexes in [b]Sources/Subs.php[/b].
+
 v1.0 - April 28th, 2018
 o Initial release to the public

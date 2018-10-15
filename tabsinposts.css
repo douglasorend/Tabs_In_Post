@@ -15,6 +15,10 @@
 .tabContainer > .tabs > ul{
 	font-size: 1em;
 	list-style:none;
+}
+
+.tabContainer_margin_left
+{
 	margin-left: -40px;
 }
 

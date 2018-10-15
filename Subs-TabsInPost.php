@@ -43,7 +43,8 @@ function TIP_BBcode(&$codes)
 	$codes[] = array(
 		'tag' => 'tab',
 		'type' => 'unparsed_commas',
-		'content' => '',
+		'after' => '',
+		'before' => '',
 		'disabled_content' => '',
 		'require_parent' => 'tabarea',
 	);
@@ -60,8 +61,10 @@ function TIP_BBcode(&$codes)
 
 function TIP_Header(&$tag, &$link, &$disabled)
 {
-	global $context;
+	global $context, $forum_version;
 	static $tag_group = 0;
+	
+	$smf21 = substr($forum_version, 0, 7) == 'SMF 2.1';
 
 	// Make sure we have at least one tab inside the tab area.  If not, don't parse anything!
 	$pattern = '#\[(taburl|tab)=([^\]]+)\](.+?)\[/(tab|taburl)\]#i' . ($context['utf8'] ? 'u' : '');
@@ -69,7 +72,7 @@ function TIP_Header(&$tag, &$link, &$disabled)
 		return;
 
 	// Build the tab area with the tabs, using only the content of the tab tags!
-	$tag['content'] = '<div class="tabContainer"><div class="tabs"><ul class="list" data-current="0">';
+	$tag['content'] = '<div class="tabContainer"><div class="tabs"><ul class="list' . (!$smf21 ? ' tabContainer_margin_left' : '') . '" data-current="0">';
 	$content = array();
 	foreach ($codes[1] as $tab_id => $usage)
 	{
